@@ -1,0 +1,1 @@
+qemu-system-x86_64 -machine q35 -drive file=OVMF_CODE.fd,if=pflash,format=raw,unit=0,readonly=on -drive file=OVMF_VARS.fd,if=pflash,format=raw,unit=1 -serial mon:stdio -m 1G -net none -vga std -usbdevice tablet -drive file=fat:rw:.\Mapped_Drive,media=disk,if=virtio,format=raw 

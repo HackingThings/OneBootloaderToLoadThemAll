@@ -1,0 +1,55 @@
+## @file
+#  TODO: Brief Description of UEFI Driver UnSB
+#  
+#  TODO: Detailed Description of UEFI Driver UnSB
+#
+#  TODO: Copyright for UEFI Driver UnSB
+#  
+#  TODO: License for UEFI Driver UnSB
+#  
+##
+
+[Defines]
+  INF_VERSION               = 0x00010005
+  BASE_NAME                 = UnSB
+  FILE_GUID                 = fb0f0f80-9bef-11ec-9b68-000c29890ae6
+  MODULE_TYPE               = DXE_DRIVER
+  VERSION_STRING            = 1
+  ENTRY_POINT               = UnSBDriverEntryPoint
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  SecurityPkg/SecurityPkg.dec
+
+[Sources]
+  UnSB.h
+  UnSB.c
+  SimpleTextOutput.c
+  SimpleTextOutput.h
+
+[LibraryClasses]
+  UefiDriverEntryPoint
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  MemoryAllocationLib
+  BaseMemoryLib
+  BaseLib
+  PcdLib
+  SecurityManagementLib
+  UefiLib
+  DevicePathLib
+  DebugLib
+
+[Protocols]
+  gEfiDriverBindingProtocolGuid
+  gEfiSimpleTextOutProtocolGuid
+  gEfiSecurityArchProtocolGuid                  ## SOMETIMES_CONSUMES
+  gEfiSecurity2ArchProtocolGuid                 ## SOMETIMES_CONSUMES
+  gEfiSecurityPolicyProtocolGuid
+[Depex]
+  TRUE 
+ 
+
+
+
